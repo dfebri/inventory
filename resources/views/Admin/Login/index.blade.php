@@ -5,8 +5,8 @@
 <div class="container-login50 d-flex" style="background: linear-gradient(to right, #e9eaec, #186ef7);">
     <div class="wrap-login100 p-2 w-20" style="background: rgb(255, 255, 255); border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: auto;">
         <div class="d-flex justify-content-center align-items-center mb-2">
-            @if($web->web_logo == '' || $web->web_logo == 'MGMaritim.png')
-            <img src="{{url('/assets/default/web/MGMaritim.png')}}" height="75px" class="" alt="logo">
+            @if($web->web_logo == '' || $web->web_logo == 'E-ATK.png')
+            <img src="{{url('/assets/default/web/E-ATK.png')}}" height="75px" class="" alt="logo">
             @else
             <img src="{{asset('storage/web/' . $web->web_logo)}}" height="75px" class="" alt="logo">
             @endif

@@ -13,20 +13,20 @@ $menu = MenuModel::orderBy('menu_sort', 'ASC')->get();
  <div class="app-sidebar">
      <div class="side-header">
          <a class="header-brand1" href="{{url('/admin')}}">
-             @if($web->web_logo == '' || $web->web_logo == 'MGMaritim.png')
-             <img src="{{url('/assets/default/web/MGMaritim.png')}}" height="40px" class="header-brand-img toggle-logo" alt="logo">
+             @if($web->web_logo == '' || $web->web_logo == 'E-ATK.png')
+             <img src="{{url('/assets/default/web/E-ATK.png')}}" height="40px" class="header-brand-img toggle-logo" alt="logo">
              <div class="header-brand-img desktop-logo">
                  <div class="d-flex align-items-center">
-                     <img src="{{url('/assets/default/web/MGMaritim.png')}}" height="40px" class="me-1" alt="logo">
+                     <img src="{{url('/assets/default/web/E-ATK.png')}}" height="40px" class="me-1" alt="logo">
                      <h4 class="fw-bold mt-4 text-white text-uppercase text-truncate">{{$web->web_nama}}</h4>
                  </div>
              </div>
 
 
-             <img src="{{url('/assets/default/web/MGMaritim.png')}}" height="40px" class="header-brand-img light-logo" alt="logo">
+             <img src="{{url('/assets/default/web/E-ATK.png')}}" height="40px" class="header-brand-img light-logo" alt="logo">
              <div class="header-brand-img light-logo1">
                  <div class="d-flex align-items-center">
-                     <img src="{{url('/assets/default/web/MGMaritim.png')}}" height="40px" class="me-1" alt="logo">
+                     <img src="{{url('/assets/default/web/E-ATK.png')}}" height="40px" class="me-1" alt="logo">
                      <h4 class="fw-bold mt-4 text-black text-uppercase text-truncate">{{$web->web_nama}}</h4>
                  </div>
              </div>

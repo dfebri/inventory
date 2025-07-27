@@ -19,8 +19,8 @@ $web = WebModel::first();
       <meta name="keywords" content="">
   
       <!-- FAVICON -->
-      @if($web->web_logo == '' || $web->web_logo == 'MGMaritim.png')
-      <link rel="shortcut icon" type="image/x-icon" href="{{url('/assets/default/web/MGMaritim.png')}}" />
+      @if($web->web_logo == '' || $web->web_logo == 'E-ATK.png')
+      <link rel="shortcut icon" type="image/x-icon" href="{{url('/assets/default/web/E-ATK.png')}}" />
       @else
       <link rel="shortcut icon" type="image/x-icon" href="{{asset('storage/web/' . $web->web_logo)}}" />
       @endif
