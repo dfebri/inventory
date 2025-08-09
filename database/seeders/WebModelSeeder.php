@@ -16,8 +16,8 @@ class WebModelSeeder extends Seeder
     {
         DB::table('tbl_web')->insert([
             [
-                'web_nama' => 'ATK-MGM',
-                'web_logo' => 'MGMaritim.png',
+                'web_nama' => 'E-ATK',
+                'web_logo' => 'E-ATK.png',
                 'web_deskripsi' => 'Pengadan Barang Masuk & Keluar',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')

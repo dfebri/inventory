@@ -58,11 +58,11 @@ $web = WebModel::first();
             <div class="page-content error-page error2 text-white">
                 <div class="container text-center">
                     <div class="error-template">
-                        <h3>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:febri.murcahyo@mgmaritim.com">contact us</a>, otherwise we&rsquo;ll be back online shortly!</h4>
+                        <h3>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:dwifebrimurcahyo@gmail.com">contact us</a>, otherwise we&rsquo;ll be back online shortly!</h4>
                           <div class="text-center">
                             <a class="btn btn-primary mt-1 mb-3" href="mailto:febri.murcahyo@mgmaritim.com"> <i class="fa fa-long-arrow-right"></i> Contact Us</a>
                           </div>
-                        <h4>&mdash; MGM Team</h4>
+                        <h4>&mdash; E-ATK @2025</h4>
                     </div>
                 </div>
             </div>

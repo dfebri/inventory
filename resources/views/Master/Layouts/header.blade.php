@@ -11,8 +11,8 @@
             <a class="logo-horizontal" href="{{url('/')}}">
                 <div class="header-brand-img desktop-logo">
                     <div class="d-flex justify-content-center align-items-center">
-                        @if($web->web_logo == '' || $web->web_logo == 'MGMaritim.png')
-                        <img src="{{url('/assets/default/web/MGMaritim.png')}}" height="40px" class="me-1" alt="logo">
+                        @if($web->web_logo == '' || $web->web_logo == 'E-ATK.png')
+                        <img src="{{url('/assets/default/web/E-ATK.png')}}" height="40px" class="me-1" alt="logo">
                         @else
                         <img src="{{asset('storage/web/' . $web->web_logo)}}" height="40px" class="me-1" alt="logo">
                         @endif
@@ -21,8 +21,8 @@
                 </div>
                 <div class="header-brand-img light-logo1">
                     <div class="d-flex justify-content-center align-items-center">
-                        @if($web->web_logo == '' || $web->web_logo == 'MGMaritim.png')
-                        <img src="{{url('/assets/default/web/MGMaritim.png')}}" height="40px" class="me-1" alt="logo">
+                        @if($web->web_logo == '' || $web->web_logo == 'E-ATK.png')
+                        <img src="{{url('/assets/default/web/E-ATK.png')}}" height="40px" class="me-1" alt="logo">
                         @else
                         <img src="{{asset('storage/web/' . $web->web_logo)}}" height="40px" class="me-1" alt="logo">
                         @endif

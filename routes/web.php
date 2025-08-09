@@ -20,10 +20,10 @@ use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Master\AppreanceController;
 // use App\Http\Controllers\Admin\BarangMasukController;
-use App\Http\Controllers\Admin\BarangmasukController;
+use App\Http\Controllers\Admin\BarangMasukController;
 // use App\Http\Controllers\Admin\BarangMasukController;
 use App\Http\Controllers\Admin\JenisBarangController;
-use App\Http\Controllers\Admin\BarangkeluarController;
+use App\Http\Controllers\Admin\BarangKeluarController;
 use App\Http\Controllers\Admin\LapStokBarangController;
 use App\Http\Controllers\Admin\LapBarangMasukController;
 use App\Http\Controllers\Admin\LapBarangKeluarController;
@@ -115,11 +115,11 @@ Route::group(['middleware' => 'userlogin'], function() {
 
     Route::middleware(['checkRoleUser:/barang-keluar, submenu'])->group(function (){
         //Barang Keluar
-        Route::get('/admin/barang-keluar', [BarangkeluarController::class, 'index']);
-        Route::get('/admin/barang-keluar/show', [BarangkeluarController::class, 'show'])->name('barang-keluar.getbarang-keluar');
-        Route::post('/admin/barang-keluar/proses_tambah', [BarangkeluarController::class, 'proses_tambah'])->name('barang-keluar.store');
-        Route::post('/admin/barang-keluar/proses_ubah/{barangkeluar}', [BarangkeluarController::class, 'proses_ubah']);
-        Route::post('/admin/barang-keluar/proses_hapus/{keluar}', [BarangkeluarController::class, 'proses_hapus']);
+        Route::get('/admin/barang-keluar', [BarangKeluarController::class, 'index']);
+        Route::get('/admin/barang-keluar/show', [BarangKeluarController::class, 'show'])->name('barang-keluar.getbarang-keluar');
+        Route::post('/admin/barang-keluar/proses_tambah', [BarangKeluarController::class, 'proses_tambah'])->name('barang-keluar.store');
+        Route::post('/admin/barang-keluar/proses_ubah/{barangkeluar}', [BarangKeluarController::class, 'proses_ubah']);
+        Route::post('/admin/barang-keluar/proses_hapus/{keluar}', [BarangKeluarController::class, 'proses_hapus']);
     });
 
     Route::middleware(['checkRoleUser:/order, submenu'])->group(function() {
