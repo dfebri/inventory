@@ -58,8 +58,9 @@ $web = WebModel::first();
             <div class="page-content error-page error2 text-white">
                 <div class="container text-center">
                     <div class="error-template">
-                        <h3>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:dwifebrimurcahyo@gmail.com">contact us</a>, otherwise we&rsquo;ll be back online shortly!</h4>
-                          <div class="text-center">
+                        <!-- <h3>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:dwifebrimurcahyo@gmail.com">contact us</a>, otherwise we&rsquo;ll be back online shortly!</h4> -->
+                       <h3>Sorry, your trial period has ended. If you have any questions or would like to continue using our service, please <a href="mailto:dwifebrimurcahyo@gmail.com">contact us</a></h3>
+                        <div class="text-center">
                             <a class="btn btn-primary mt-1 mb-3" href="mailto:febri.murcahyo@mgmaritim.com"> <i class="fa fa-long-arrow-right"></i> Contact Us</a>
                           </div>
                         <h4>&mdash; E-ATK @2025</h4>
@@ -96,28 +97,3 @@ $web = WebModel::first();
 
 </html>
 
-Dear team, 
-
-
-untuk courtesy visit rondo direschedule jam 2pm ~ 3pm, 
-
-Sore, Febri.
-
-Access time untuk karyawan sbb:
-Yang hanya punya access ke floor kerjanya sendiri: 8AM - 8PM
-Yang punya access ke semua floors: 24 hours
-
-Mohon bisa dibuatkan seperti ini ya. Terima kasih.
-
-Febri, maaf ganggu. Saya revisi yah:
-Dari 8AM - 8 PM
-Menjadi 7AM - 8 PM
-
-Selamat sore bu, izin info untuk access time karyawan sudah diupdate ya bu, berikut updatenya : 
-
-1. user dengan rule all access 24 jam 
-2. user dengan rule access terbatas untuk masing-masing lantai dari jam 07.00AM ~ 08.00PM
-3. user dengan rule access lantai 2 ke mushola lantai 1 dari jam 11.40AM ~ 04.30PM
-4. user dengan rule access finger (teknisi) ke mushola lantai 1 dari jam 11.40AM ~ 04.30PM
-
-terima kasih bu 
