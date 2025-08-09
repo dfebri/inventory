@@ -45,6 +45,16 @@ use App\Http\Controllers\MateraiModelController as ControllersMateraiModelContro
 |
 */
 // Route::post('/addrequest',[BarangkeluarController::class, 'addRequest'])->name('addmorepost');
+Route::get('/maintenance/on', function() {
+    Artisan::call('down');
+    return 'Website masuk mode maintenance.';
+});
+
+Route::get('/maintenance/off', function() {
+    Artisan::call('up');
+    return 'Website keluar dari mode maintenance.';
+});
+
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
     Artisan::call('config:clear');
