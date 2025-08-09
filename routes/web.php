@@ -45,6 +45,13 @@ use App\Http\Controllers\MateraiModelController as ControllersMateraiModelContro
 |
 */
 // Route::post('/addrequest',[BarangkeluarController::class, 'addRequest'])->name('addmorepost');
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    return 'Cache cleared';
+});
 
 Route::middleware (['preventBackHistory'])->group(function () {
     Route::get('/admin/login', [LoginController::class, 'index'])->middleware('useractive');
