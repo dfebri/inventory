@@ -71,15 +71,14 @@ Route::get('/fix-storage', function () {
     $target = realpath(base_path('storage/app/public'));
     $link = $_SERVER['DOCUMENT_ROOT'] . '/storage';
 
-    // kalau sudah ada folder/link, hapus dulu
     if (file_exists($link) || is_link($link)) {
         rename($link, $link.'_old_'.time());
     }
 
     if (symlink($target, $link)) {
-        return "✅ Symlink berhasil: $link → $target";
+        return "Symlink berhasil: $link → $target";
     } else {
-        return "❌ Gagal bikin symlink. Hosting mungkin blokir fungsi symlink()";
+        return "symlink gagal. symlink()";
     }
 });
 
