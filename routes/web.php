@@ -47,15 +47,14 @@ use App\Http\Controllers\MateraiModelController as ControllersMateraiModelContro
 
 Route::get('/maintenance/on', function () {
     Artisan::call('down', [
-        '--secret' => 'balikin-online'
+        '--secret' => 'secret-mod'
     ]);
-    return '✅ Website masuk mode maintenance. 
-            Akses darurat di /balikin-online';
+    return 'Application is now in maintenance mode.';
 });
 
 Route::get('/maintenance/off', function () {
     Artisan::call('up');
-    return '✅ Website sudah online kembali.';
+    return 'Application is now live.';
 });
 
 
