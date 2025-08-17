@@ -44,16 +44,20 @@ use App\Http\Controllers\MateraiModelController as ControllersMateraiModelContro
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Route::post('/addrequest',[BarangkeluarController::class, 'addRequest'])->name('addmorepost');
-Route::get('/maintenance/on', function() {
-    Artisan::call('down');
-    return 'Website masuk mode maintenance.';
+
+Route::get('/maintenance/on', function () {
+    Artisan::call('down', [
+        '--secret' => 'balikin-online'
+    ]);
+    return '✅ Website masuk mode maintenance. 
+            Akses darurat di /balikin-online';
 });
 
-Route::get('/maintenance/off', function() {
+Route::get('/maintenance/off', function () {
     Artisan::call('up');
-    return 'Website keluar dari mode maintenance.';
+    return '✅ Website sudah online kembali.';
 });
+
 
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
