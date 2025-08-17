@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\LapBarangMasukController;
 use App\Http\Controllers\Admin\LapBarangKeluarController;
 use App\Http\Controllers\Admin\MateraiModelController;
 use App\Http\Controllers\MateraiModelController as ControllersMateraiModelController;
+use PhpParser\Node\Stmt\Return_;
 
 // use App\Http\Controllers\MateraiModelController as ControllersMateraiModelController;
 
@@ -64,6 +65,11 @@ Route::get('/clear-cache', function() {
     Artisan::call('route:clear');
     Artisan::call('view:clear');
     return 'Cache cleared';
+});
+
+Route::get('/symlink', function() {
+    Artisan::call('storage:link');
+    return 'Symlink Fixed';
 });
 
 Route::middleware (['preventBackHistory'])->group(function () {
