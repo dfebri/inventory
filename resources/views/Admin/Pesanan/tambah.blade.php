@@ -25,7 +25,7 @@
                             <input type="text" name="divisi" class="form-control" placeholder="">
                         </div>
                        <div class="form-group">
-                            <label for="barang" class="form-label">Nama Barang</label>
+                            <label for="barang" class="form-label">Nama Barang<span class="text-danger">*</span></label>
                             <input type="text" name="barang" class="form-control" placeholder="">
                         </div>       
                         <!-- <div class="form-group">
