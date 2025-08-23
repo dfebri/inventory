@@ -24,11 +24,11 @@
                             <label for="divisi" class="form-label">Divisi<span class="text-danger">*</span></label>
                             <input type="text" name="divisi" class="form-control" placeholder="">
                         </div>
-                        {{-- <div class="form-group">
-                            <label for="barang" class="form-label">Barang Baru</label>
-                            <input type="text" name="barang" class="form-control" placeholder="Request barang baru (diluar stok)">
-                        </div>        --}}
-                        <div class="form-group">
+                       <div class="form-group">
+                            <label for="barang" class="form-label">Nama Barang</label>
+                            <input type="text" name="barang" class="form-control" placeholder="">
+                        </div>       
+                        <!-- <div class="form-group">
                             <label>Kode Barang Stok <span class= "text-danger me-1">*</span>
                                 <input type="hidden" id="status" value="false">
                                 <div class="spinner-border spinner-border-sm d-none" id="loaderkd" role="status">
@@ -40,18 +40,18 @@
                                 <button class="btn btn-primary-light" onclick="searchBarang()" type="button"><i class="fe fe-search"></i></button>
                                 <button class="btn btn-success-light" onclick="modalBarang()" type="button"><i class="fe fe-box"></i></button>
                             </div>
-                        </div>
-                        <div class="form-group">
+                        </div> -->
+                        <!-- <div class="form-group">
                             <label>Barang Stok</label>
                             <input type="text" class="form-control" id="nmbarang" placeholder="Request barang stok">
-                        </div>
+                        </div> -->
                         <div class="form-group">
-                            <label for="jumlah" class="form-label">Jumlah Request<span class="text-danger">*</span></label>
+                            <label for="jumlah" class="form-label">Quantity<span class="text-danger">*</span></label>
                             <input type="text" name="jumlah" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" placeholder="">
                         </div>   
                     </div>   
                     <div class="col-md-6">
-                        {{-- <div class="form-group">
+                         <!-- <div class="form-group">
                             <label>Kode Barang <span class= "text-danger me-1">*</span>
                                 <input type="hidden" id="status" value="false">
                                 <div class="spinner-border spinner-border-sm d-none" id="loaderkd" role="status">
@@ -63,12 +63,12 @@
                                 <button class="btn btn-primary-light" onclick="searchBarang()" type="button"><i class="fe fe-search"></i></button>
                                 <button class="btn btn-success-light" onclick="modalBarang()" type="button"><i class="fe fe-box"></i></button>
                             </div>
-                        </div> --}}
-                        {{-- <div class="form-group">
+                        </div> 
+                       <div class="form-group">
                             <label>Barang Stok</label>
                             <input type="text" class="form-control" id="nmbarang" placeholder="Request barang stok">
-                        </div> --}}
-                        {{-- <div class="row">
+                        </div> 
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Satuan</label>
@@ -81,15 +81,15 @@
                                     <input type="text" class="form-control" id="jenis" readonly>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div> 
                         <div class="form-group">
                             <label for="barang" class="form-label">Barang Baru</label>
                             <input type="text" name="barang" class="form-control" placeholder="Request barang baru (diluar stok)">
                         </div>   
-                        {{-- <div class="form-group">
+                        <div class="form-group">
                             <label for="jumlah" class="form-label">Jumlah Request<span class="text-danger">*</span></label>
                             <input type="text" name="jumlah" value="0" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" placeholder="">
-                        </div>    --}}
+                        </div>   -->
                         <div class="form-group">
                             <label for="title" class="form-label">Gambar Barang Baru</label>
                                 <center>

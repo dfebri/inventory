@@ -32,8 +32,8 @@
                                 <th class="border-bottom-0">Gambar</th>
                                 <th class="border-bottom-0">Tanggal Request </th>
                                 <th class="border-bottom-0">Kode Request</th>
-                                <th class="border-bottom-0">Kode Barang</th>
-                                <th class="border-bottom-0">Barang Stok</th>
+                                <!-- <th class="border-bottom-0">Kode Barang</th>
+                                <th class="border-bottom-0">Barang Stok</th> -->
                                 <th class="border-bottom-0">Barang Baru</th>
                                 <th class="border-bottom-0">Nama</th>
                                 <th class="border-bottom-0">Divisi</th>
@@ -151,14 +151,14 @@
                             data: 'ps_kode',
                             name: 'ps_kode',
                         },
-                        {
-                            data: 'barang_kode',
-                            name: 'barang_kode',
-                        },
-                        {
-                            data: 'kdbarang',
-                            name: 'barang_nama',
-                        },
+                        // {
+                        //     data: 'barang_kode',
+                        //     name: 'barang_kode',
+                        // },
+                        // {
+                        //     data: 'kdbarang',
+                        //     name: 'barang_nama',
+                        // },
                         {
                             data: 'barang',
                             name: 'ps_barang',

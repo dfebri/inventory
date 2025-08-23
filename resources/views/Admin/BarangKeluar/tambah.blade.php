@@ -51,7 +51,7 @@
                             </label>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="addBarang0" name="kdbarang[]" placeholder="" data-index="0" readonly>
-                                <button class="btn btn-primary-light" onclick="searchBarang(0)" type="button"><i class="fe fe-search"></i></button>
+                                <!-- <button class="btn btn-primary-light" onclick="searchBarang(0)" type="button"><i class="fe fe-search"></i></button> -->
                                 <button class="btn btn-success-light" onclick="modalBarang(0)" type="button"><i class="fe fe-box"></i></button>
                             </div>
                             <input type="hidden" class="form-control" id="barangstok" readonly>
