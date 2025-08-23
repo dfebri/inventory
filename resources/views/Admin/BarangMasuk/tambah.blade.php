@@ -46,7 +46,7 @@
 
                             <div class=input-group>
                                 <input type="text" class="form-control" name="kdbarang" placeholder="">
-                                <button class="btn btn-primary-light" onclick="searchBarang()" type="button"><i class="fe fe-search"></i></button>
+                                <!-- <button class="btn btn-primary-light" onclick="searchBarang()" type="button"><i class="fe fe-search"></i></button> -->
                                 <button class="btn btn-success-light" onclick="modalBarang()" type="button"><i class="fe fe-box"></i></button>
                                 
                             </div>
