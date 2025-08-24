@@ -90,7 +90,7 @@ class BarangKeluarController extends Controller
                         "barang_kode" => $row->barang_kode,
                         "bk_tanggal" => $row->bk_tanggal,
                         "bk_tujuan" => trim(preg_replace('/[^A-Za-z0-9-]+/', '_', $row->bk_tujuan)),
-                        "bk_user" => $row->bk_tanggal,
+                        "bk_user" => $row->bk_user,
                         "bk_jumlah" => $row->bk_jumlah,
 
                     );
@@ -134,18 +134,18 @@ class BarangKeluarController extends Controller
                 'bk_tanggal'=> $request->tglkeluar,  
                 'barang_stok' => $request->barangstok,
                 'bk_tujuan'=> $request->tujuan,
-                'bk_user'=> $request->user,
+                // 'bk_user'=> $request->user,
                 'barang_kode' => $request->barang[$i],
                 'bk_jumlah' => $request->jml[$i],
             ]);
         } 
-        // $data = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->orderBy('bk_id', 'DESC')->get();			     
-        // Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data));
+        $data1 = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->orderBy('bk_id', 'DESC')->get();			     
+        Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data1));
         
-        // $today = Carbon::now();
-        // $data = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->where('tbl_barangkeluar.updated_at', '>=', $today)
-        // ->orderBy('tbl_barangkeluar.updated_at', 'DESC')->get();
-        // Mail::to('febri.murcahyo@mgmaritim.com')->send(new SendMail($data));
+        $today = Carbon::now();
+        $data = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->where('tbl_barangkeluar.updated_at', '>=', $today)
+        ->orderBy('tbl_barangkeluar.updated_at', 'DESC')->get();
+        Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data));
         // dd($data);
 
     }

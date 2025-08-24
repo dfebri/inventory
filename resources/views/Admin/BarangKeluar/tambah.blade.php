@@ -25,12 +25,13 @@
                                 <option value="">--- Piilh Dept. ---</option>
                                     <option>HRGA</option>
                                     <option>Operation</option>
-                                    <option>Commercial</option>
-                                    <option>SCM</option>
-                                    <option>FAT</option>
-                                    <option>PA</option>
-                                    <option>KPG</option>
-                                    <option>BPIC</option>
+                                    <!-- <option>Commercial</option> -->
+                                    <!-- <option>SCM</option> -->
+                                    <option>Finance</option>
+                                    <option>Tax</option>
+                                    <option>Sales</option>
+                                    <!-- <option>KPG</option>
+                                    <option>BPIC</option> -->
                             </select>
                         </div>
                         <div class="form-group">
@@ -134,7 +135,6 @@
                     </label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="addBarang${formIndex}" name="kdbarang[]" placeholder="" data-index="${formIndex}" readonly>
-                        <button class="btn btn-primary-light" onclick="searchBarang()" type="button"><i class="fe fe-search"></i></button>
                         <button class="btn btn-success-light" onclick="modalBarang()" type="button"><i class="fe fe-box"></i></button>
                     </div>
                     <input type="hidden" class="form-control" id="barangstok" readonly>
@@ -250,7 +250,7 @@
         const tglkeluar = $("input[name='tglkeluar']").val();
         const user = $("input[name='user']").val();
         const tujuan = $("select[name='tujuan']").val();
-
+       console.log(user);
         $("input[name='kdbarang[]']").each(function() {
             kdbarang.push(this.value);
         });

@@ -1,15 +1,15 @@
 <!-- MODAL BARANG -->
-<div class="modal fade" data-bs-backdrop="static" style="overflow-y:scroll;" id="modalBarang">
+<div class="modal fade" data-bs-backdrop="static" style="overflow-y:scroll;" id="modalBarang2">
     <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
         <div class="modal-content modal-content-demo">
             <div class="modal-header">
                 <h6 class="modal-title">Pilih Barang</h6><button onclick="resetB('tambah')" aria-label="Close" class="btn-close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body p-4 pb-5">
-                <input type="hidden" value="tambah" name="param[]">
+                <input type="hidden" value="tambah" name="param2[]">
                 <input type="hidden" id="randkey">
                 <div class="table-responsive">
-                    <table id="table-2" width="100%" class="table table-bordered text-nowrap border-bottom dataTable no-footer dtr-inline collapsed">
+                    <table id="table-3" width="100%" class="table table-bordered text-nowrap border-bottom dataTable no-footer dtr-inline collapsed">
                         <thead>
                             <th class="border-bottom-0" width="1%">No</th>
                             <th class="border-bottom-0">Gambar</th>
@@ -32,13 +32,10 @@
 
 @section('formOtherJS')
 <script>
-    // document.getElementById('randkey').value = makeid(10);
-    // if (randKeyElement) {
-    //         randKeyElement.value = makeid(10);
-    //     }
-
+    document.getElementById('randkey').value = makeid(10);
+    
     function resetB() {
-        param = $('input[name="param[]"]').val();
+        param = $('input[name="param2[]"]').val();
         if (param == 'tambah') {
             $('#modalBarang').modal('hide');
             $('#modaldemo8').removeClass('d-none');
@@ -49,18 +46,15 @@
     }
 
     function pilihBarang(data) {
-        var inputFields = document.querySelectorAll("input[name='kdbarang[]']");
-        var lastInput = inputFields[inputFields.length - 1];
-        lastInput.value = data.barang_kode;
-
-       
-        // console.log( $("input[name='kdbarang[0]']").val(`${data.barang_kode}`));
+        var key = $("#randkey").val();
+        $("#status").val("true");
+        $("input[name='kdbarang[]']").val(data.barang_kode);
         $("#barangstok").val(data.totalstok);
         $("#nmbarang").val(data.barang_nama.replace(/_/g, ' '));
         $("#satuan").val(data.satuan_nama.replace(/_/g, ' '));
         $("#jenis").val(data.jenisbarang_nama.replace(/_/g, ' '));
         $('#modaldemo8').removeClass('d-none');
-        $('#modalBarang').modal('hide');
+        $('#modalBarang2').modal('hide');
     }
 
     function pilihBarangU(data) {
@@ -72,13 +66,13 @@
         $("#satuanU").val(data.satuan_nama.replace(/_/g, ' '));
         $("#jenisU").val(data.jenisbarang_nama.replace(/_/g, ' '));
         $('#Umodaldemo8').removeClass('d-none');
-        $('#modalBarang').modal('hide');
+        $('#modalBarang2').modal('hide');
     }
 
-    var table2;
+    var table3;
     $(document).ready(function() {
         //datatables
-        table2 = $('#table-2').DataTable({
+        table3 = $('#table-3').DataTable({
 
             "processing": true,
             "serverSide": true,
@@ -95,9 +89,9 @@
             "lengthChange": true,
 
             "ajax": {
-                "url": "{{url('admin/barang/listbarang')}}/param",
+                "url": "{{url('admin/barang/listbarang')}}/param2",
                 "data": function(d) {
-                    d.param = $('input[name="param[]"]').val();
+                    d.param = $('input[name="param2[]"]').val();
                 }
             },
 
@@ -160,6 +154,5 @@
         }
         return result;
     }
-
 </script>
 @endsection
