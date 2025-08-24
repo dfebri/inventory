@@ -139,8 +139,8 @@ class BarangKeluarController extends Controller
                 'bk_jumlah' => $request->jml[$i],
             ]);
         } 
-        $data1 = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->orderBy('bk_id', 'DESC')->get();			     
-        Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data1));
+        // $data1 = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->orderBy('bk_id', 'DESC')->get();			     
+        // Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data1));
         
         $today = Carbon::now();
         $data = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->where('tbl_barangkeluar.updated_at', '>=', $today)
