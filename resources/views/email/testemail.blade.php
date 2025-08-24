@@ -60,7 +60,7 @@
             <hr>
         </div>
     @endforeach
-    <a class="button" href="https://atkmgm.com/admin/barang-keluar">View</a>
+    <a class="button" href="https://atkwk.my.id/admin/barang-keluar">View</a>
     <h4>by Tim MGMaritim</h4>
 </body>
 </html>
