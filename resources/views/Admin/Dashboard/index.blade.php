@@ -71,7 +71,7 @@
                     <div class="text-white">
                         <h2 class="mb-0 number-font">{{ $bk }}</h2>
                         <p class="text-white mb-0">Barang Keluar </p>
-                        <a style = "color:azure" href="hhttps://atkwk.my.id/admin/barang-keluar">More Info <i class="bi bi-arrow-right"></i></a>
+                        <a style = "color:azure" href="https://atkwk.my.id/admin/barang-keluar">More Info <i class="bi bi-arrow-right"></i></a>
                         {{-- <a href="http://127.0.0.1:8000/admin/barang"></a> --}}
                     </div>
                     <div class ="ms-auto"> <i class="fe fe-repeat text-white fs-40 me-2 mt-2"></i>
