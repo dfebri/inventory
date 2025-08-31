@@ -46,12 +46,12 @@ class LapBarangMasukController extends Controller
         $data['web'] = WebModel::first();
         $data['tglawal'] = $request->tglawal;
         $data['tglakhir'] = $request->tglakhir;
-        $pdf = PDF::loadView('Admin.Laporan.BarangMasuk.pdf', $data);
+        $pdf = PDF::loadView('Admin.Laporan.BarangMasuk.PDF', $data);
 
         if($request->tglawal){
-            return $pdf->download('lap-bm-'.$request->tglawal.'-'.$request->tglakhir.'.pdf');
+            return $pdf->download('lap-bm-'.$request->tglawal.'-'.$request->tglakhir.'.PDF');
         }else{
-            return $pdf->download('lap-bm-semua-tanggal.pdf');
+            return $pdf->download('lap-bm-semua-tanggal.PDF');
         }
     }
     public function excel(Request $request) 

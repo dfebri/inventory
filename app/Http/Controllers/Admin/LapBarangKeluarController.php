@@ -52,12 +52,12 @@ class LapBarangKeluarController extends Controller
         $data['web'] = WebModel::first();
         $data['tglawal'] = $request->tglawal;
         $data['tglakhir'] = $request->tglakhir;
-        $pdf = PDF::loadView('Admin.Laporan.BarangKeluar.pdf', $data);
+        $pdf = PDF::loadView('Admin.Laporan.BarangKeluar.PDF', $data);
         
         if($request->tglawal){
-            return $pdf->download('lap-bk-'.$request->tglawal.'-'.$request->tglakhir.'.pdf');
+            return $pdf->download('lap-bk-'.$request->tglawal.'-'.$request->tglakhir.'.PDF');
         }else{
-            return $pdf->download('lap-bk-semua-tanggal.pdf');
+            return $pdf->download('lap-bk-semua-tanggal.PDF');
         }
         
     }
