@@ -44,7 +44,7 @@ class SendMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Request Barang ATK',
+            subject: 'Request Barang ATK'
         );
     }
 
@@ -74,6 +74,6 @@ class SendMail extends Mailable
     public function build()
     {
         return $this->subject('Request Barang ATK')
-                    ->view('Email.testemail');
+                    ->view('email.testemail');
     }
 }
