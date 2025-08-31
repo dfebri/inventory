@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
-// use Barryvdh\DomPDF\PDF
-// use Barryvdh\DomPDF\PDF;
-use Barryvdh\DomPDF\Facade\PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use App\Exports\ExportBarang;
 use App\Models\Admin\WebModel;
@@ -40,26 +38,46 @@ class LapBarangKeluarController extends Controller
         return view('Admin.Laporan.BarangKeluar.print', $data);
     }
 
+    // public function pdf(Request $request)
+    // {
+    //     if ($request->tglawal) {
+    //         $data['data'] = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->whereBetween('bk_tanggal', [$request->tglawal, $request->tglakhir])->orderBy('bk_id', 'DESC')->get();
+    //     } else {
+    //         $data['data'] = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->orderBy('bk_id', 'DESC')->get();
+    //     }
+
+    //     $data["title"] = "PDF Barang Masuk";
+    //     $data['web'] = WebModel::first();
+    //     $data['tglawal'] = $request->tglawal;
+    //     $data['tglakhir'] = $request->tglakhir;
+    //     $pdf = PDF::loadView('Admin.Laporan.BarangKeluar.pdf', $data);
+        
+    //     if($request->tglawal){
+    //         return $pdf->download('lap-bk-'.$request->tglawal.'-'.$request->tglakhir.'.PDF');
+    //     }else{
+    //         return $pdf->download('lap-bk-semua-tanggal.PDF');
+    //     }
+    // }
+
     public function pdf(Request $request)
     {
-        if ($request->tglawal) {
-            $data['data'] = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->whereBetween('bk_tanggal', [$request->tglawal, $request->tglakhir])->orderBy('bk_id', 'DESC')->get();
-        } else {
+        if($request->tglawal) {
+            $data['data'] = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->whereBetween('bk_tanggal', [$request->tglawal, $request->tglakhir])->orderBy('bk_id', 'DESC')->get();    
+        }else {
             $data['data'] = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->orderBy('bk_id', 'DESC')->get();
         }
 
-        $data["title"] = "PDF Barang Masuk";
+        $data["title"] = "PDF Barang Keluar";
         $data['web'] = WebModel::first();
         $data['tglawal'] = $request->tglawal;
         $data['tglakhir'] = $request->tglakhir;
-        $pdf = PDF::loadView('Admin.Laporan.BarangKeluar.PDF', $data);
-        
+        $pdf = PDF::loadView('Admin.Laporan.BarangKeluar.pdf', $data);
+
         if($request->tglawal){
             return $pdf->download('lap-bk-'.$request->tglawal.'-'.$request->tglakhir.'.PDF');
         }else{
             return $pdf->download('lap-bk-semua-tanggal.PDF');
         }
-        
     }
 
     public function excel(Request $request) 
