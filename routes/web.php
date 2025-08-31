@@ -168,14 +168,6 @@ Route::group(['middleware' => 'userlogin'], function() {
         Route::get('/admin/order/getbarang/{id}', [BarangController::class, 'getbarang']);
         Route::get('/admin/order/listbarang/{param}', [BarangController::class, 'listbarang']);
     });
-
-    Route::middleware(['checkRoleUser:/materai, menu'])->group(function() {
-        //Order-Materai
-        Route::get('/admin/materai', [MateraiModelController::class, 'index']);
-        // Route::get('/admin/materai', [ControllersMateraiModelController::class, 'index]);
-        Route::get('/admin/admin', [MateraiModelController::class, 'proses_tambah'])->name('materai.store');
-    });
-
     Route::middleware(['checkRoleUser:/lap-barang-masuk, submenu'])->group(function() {
        //Lap-Barang-Masuk
         Route::get('/admin/lap-barang-masuk',[LapBarangMasukController::class, 'index']);
