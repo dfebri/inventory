@@ -259,7 +259,7 @@
             success: function(data) {
                 $('#modaldemo8').modal('toggle');
                 swal({
-                    title: "Berhasil ditambah!",
+                    title: "Berhasil Request!",
                     type: "success"
                 });
                 table.ajax.reload(null, false);

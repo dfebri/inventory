@@ -55,13 +55,13 @@
 <body>
     @foreach ($data as $item)
         <div class="card">
-            <p>Request dari <b>{{ $item->bk_user }}</b>, Departemen <b>{{ $item->bk_tujuan }}</b></p>
+            <p>Request dari <b>{{ $item->bk_user }}</b>, Departement <b>{{ $item->bk_tujuan }}</b></p>
             <p>Nama Barang <b>{{ $item->barang_nama }}</b>, Jumlah Barang <b>{{ $item->bk_jumlah }}</b></p>
             <hr>
         </div>
     @endforeach
     <a class="button" href="https://atkwk.my.id/admin/barang-keluar">View</a>
-    <h4>by Tim MGMaritim</h4>
+    <h4>by Team HRGA</h4>
 </body>
 </html>
 

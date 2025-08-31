@@ -44,7 +44,7 @@ class SendMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Request Barang',
+            subject: 'Request Barang ATK',
         );
     }
 
@@ -73,23 +73,7 @@ class SendMail extends Mailable
 
     public function build()
     {
-        return $this->subject('ATK-MGM')
+        return $this->subject('Request Barang ATK')
                     ->view('Email.testemail');
-
-        
-                    // ->view('email.testemail');
-
-        // return $this->from('dwifebrimurcahyo@gmail.com')
-        //             -> view('emailku')
-        //             -> with (['nama' => 'Febri']);
-        
-        
-        // ->markdown('emailku')
-        //             ->subject('Pemberitahuan Penting!')
-        //             ->with('data', $this->data);
-                    // ->attach(public_path(''), [
-                    //     'as'    => 'a.png',
-                    //     'mime'  => 'image/png',
-                    // ]);
     }
 }
