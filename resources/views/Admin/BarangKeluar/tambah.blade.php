@@ -89,13 +89,13 @@
     
 
     let formIndex = 1;  
-    const maxForms = 11;
+    const maxForms = 2;
     function addForm() {
         const formContainer = document.getElementById('formContainer');
         const currentForms = formContainer.getElementsByClassName('form-group-wrapper').length;
         
         if(currentForms >= maxForms) {
-            validasi('Maksimal 3 Barang mas e.', 'warning');
+            validasi('Maksimal Request 2 Barang', 'warning');
             return;
         }
         // console.log(currentForms);

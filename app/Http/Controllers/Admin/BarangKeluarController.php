@@ -142,11 +142,11 @@ class BarangKeluarController extends Controller
         // $data1 = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->orderBy('bk_id', 'DESC')->get();			     
         // Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data1));
         
-        // $today = Carbon::now();
-        // $data = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->where('tbl_barangkeluar.updated_at', '>=', $today)
-        // ->orderBy('tbl_barangkeluar.updated_at', 'DESC')->get();
-        // Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data));
-        // dd($data);
+        $today = Carbon::now();
+        $data = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->where('tbl_barangkeluar.updated_at', '>=', $today)
+        ->orderBy('tbl_barangkeluar.updated_at', 'DESC')->get();
+        Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data));
+
 
     }
         

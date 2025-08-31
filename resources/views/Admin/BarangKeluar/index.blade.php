@@ -40,7 +40,6 @@
                                 <th class="border-bottom-0">Barang</th>
                                 <th class="border-bottom-0">Departement</th>
                                 <th class="border-bottom-0">Nama</th>
-                                <!-- <th class="border-bottom-0">Stok</th> -->
                                 <th class="border-bottom-0">Jumlah Keluar</th>
                                 <th class="border-bottom-0" width="1%">Action</th>
                             </thead>
@@ -56,7 +55,6 @@
     @include('Admin.BarangKeluar.edit')
     @include('Admin.BarangKeluar.tambah')
     @include('Admin.BarangKeluar.barang') 
-    @include('Admin.BarangKeluar.barang2') 
     @include('Admin.BarangKeluar.hapus')
 
     <script>

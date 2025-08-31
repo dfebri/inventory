@@ -17,11 +17,11 @@
                             <input type="text" name="tglrequest" class="form-control datepicker-date" placeholder="">
                         </div>
                         <div class="form-group">
-                            <label for="nama" class="form-label">Nama </label>
+                            <label for="nama" class="form-label">User</label>
                             <input type="text" name="nama" class="form-control" placeholder="">
                         </div>
                         <div class="form-group">
-                            <label for="divisi" class="form-label">Divisi<span class="text-danger">*</span></label>
+                            <label for="divisi" class="form-label">Dept<span class="text-danger">*</span></label>
                             <input type="text" name="divisi" class="form-control" placeholder="">
                         </div>
                        <div class="form-group">
@@ -114,68 +114,19 @@
 
 @section('formTambahJS')
 <script>
-    $('input[name="kdbarang"]').keypress(function(event) {
-        var keycode = (event.keyCode ? event.keyCode : event.which);
-        if (keycode == '13') {
-            getbarangbyid($('input[name="kdbarang"]').val());
-        }
-    });
-
     function modalBarang() {
         $('#modalBarang').modal('show');
         $('#modaldemo8').addClass('d-none');
-        $('input[name="param"]').val('thttp://127.0.0.1:8000/ambah');
+        $('input[name="param"]').val('tambah');
         resetValid();
         table2.ajax.reload();
     }
-
-    function searchBarang() {
-        getbarangbyid($('input[name="kdbarang"]').val());
-        resetValid();
-    }
-       
-    function getbarangbyid(id) {
-        $("#loaderkd").removeClass('d-none');
-        $.ajax({
-            type: 'GET',
-            url: "{{ url('admin/barang/getbarang') }}/" + id,
-            processData: false,
-            contentType: false,
-            dataType: 'json',
-            success: function(data) {
-                if (data.length > 0) {
-                    $("#loaderkd").addClass('d-none');
-                    $("#status").val("true");
-                    $("#nmbarang").val(data[0].barang_nama);
-                    $("#satuan").val(data[0].satuan_nama);
-                    $("#jenis").val(data[0].jenisbarang_nama);
-                } else {
-                    $("#loaderkd").addClass('d-none');
-                    $("#status").val("false");
-                    $("#nmbarang").val('');
-                    $("#satuan").val('');
-                    $("#jenis").val('');
-                }
-            }
-        });
-    }
             
     function checkForm(){
-        const reqkode = $("input[name = 'reqkode']").val();
         const tglrequest = $("input[name= 'tglrequest']").val();
         const divisi = $("input[name= 'divisi']").val();
         const jumlah = $("input[name= 'jumlah']").val();
-        // setLoading(true);
-        // resetValid();
-        console.log(jumlah);
-        console.log(divisi);
-
-        if(reqkode == ""){
-            validasi('Kode Request wajib di isi!', 'warning');
-            $("input[name='reqkode']").addClass('is-invalid');
-            setLoading(false);
-            return(false);
-        }else if(tglrequest == ""){
+        if(tglrequest == ""){
             validasi('Tanggal Request wajib di isi!', 'warning');
             $("input[name='tglrequest']").addClass('is-invalid');
             setLoading(false);
@@ -198,7 +149,6 @@
         // console.log('submitForm');
         const reqkode = $("input[name='reqkode']").val();
         const tglrequest = $("input[name='tglrequest']").val();
-        const kdbarang = $("input[name='kdbarang']").val();
         const nama = $("input[name='nama']").val();
         const divisi = $("input[name='divisi']").val();
         const barang = $("input[name='barang']").val();
@@ -211,7 +161,6 @@
         fd.append('foto', foto[0]);
         fd.append('reqkode', reqkode);
         fd.append('tglrequest', tglrequest);
-        fd.append('kdbarang', kdbarang);
         fd.append('nama', nama);
         fd.append('divisi', divisi);
         fd.append('barang', barang);
@@ -219,7 +168,6 @@
         $.ajax({
             type: 'POST',
             url: "{{route('order.store') }}",
-            // enctype: 'multipart/form-data',
             processData: false,
             contentType: false,
             dataType: 'json',
@@ -237,7 +185,6 @@
     }
     function resetValid() {
         $("input[name='reqkode']").removeClass('is-invalid');
-        $("input[name='kdbarang']").removeClass('is-invalid');
         $("input[name='tglrequest']").removeClass('is-invalid');
         $("input[name='nama']").removeClass('is-invalid');
         $("input[name='divisi']").removeClass('is-invalid');
@@ -247,7 +194,6 @@
     function reset() {
         resetValid();
         $("input[name='reqkode']").val('');
-        $("input[name='kdbarang']").val('');
         $("input[name='tglrequest']").val('');
         $("input[name='nama']").val('');
         $("input[name='divisi']").val('');

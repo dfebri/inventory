@@ -18,7 +18,7 @@
                             <input type="text" name="tglkeluarU" class="form-control datepicker-date" placeholder="">
                         </div>
                         <div class="form-group">
-                            <label for="tujuanU" class="form-label">Tujuan</label>
+                            <label for="tujuanU" class="form-label">Departement</label>
                             <input type="text" name="tujuanU" class="form-control" placeholder="">
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                             </label>
                             <div class="input-group">
                                 <input type="text" class="form-control" autocomplete="off" name="kdbarangU" placeholder="">
-                                <button class="btn btn-primary-light" onclick="searchBarangU()" type="button"><i class="fe fe-search"></i></button>
+                                <!-- <button class="btn btn-primary-light" onclick="searchBarangU()" type="button"><i class="fe fe-search"></i></button> -->
                                 <button class="btn btn-success-light" onclick="modalBarangU()" type="button"><i class="fe fe-box"></i></button>
                             </div>
                         </div>

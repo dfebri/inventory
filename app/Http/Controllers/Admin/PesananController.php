@@ -61,10 +61,6 @@ class PesananController extends Controller
                     $tgl = $row->ps_tanggal == '' ? '-' : Carbon::parse($row->ps_tanggal)->translatedFormat('d F Y');
                     return $tgl;
                 })
-                ->addColumn('kdbarang', function($row) {
-                    $barangjoin = $row->barang_id == '' ? '-' : $row->barang_nama;
-                    return $barangjoin;
-                })
                 ->addColumn('barang', function ($row) {
                     $barang = $row->ps_barang  == '' ? '-' : $row->ps_barang;
                     return $barang;
@@ -85,7 +81,6 @@ class PesananController extends Controller
                     $array = array(
                         "ps_id" => $row->ps_id,
                         "ps_kode" => $row->ps_kode,
-                        "barang_kode" => $row->barang_kode,
                         "ps_tanggal" => $row->ps_tanggal,
                         "ps_barang" => trim(preg_replace('/[^A-Za-z0-9-]+/', '_', $row->ps_barang)),
                         "ps_nama" => trim(preg_replace('/[^A-Za-z0-9-]+/', '_', $row->ps_nama)),
@@ -120,7 +115,7 @@ class PesananController extends Controller
                     }
                     return $button;
                 })
-                ->rawColumns(['action', 'img', 'tgl', 'kdbarang', 'barang', 'nama', 'divisi', 'jumlah'])->make(true);
+                ->rawColumns(['action', 'img', 'tgl', 'barang', 'nama', 'divisi', 'jumlah'])->make(true);
         }
     }
 
@@ -136,32 +131,9 @@ class PesananController extends Controller
             $img = $image->hashName();
         }
 
-        // $jmlmasuk = BarangmasukModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangmasuk.barang_kode')->where('tbl_barangmasuk.barang_kode', '=', $request->barang_kode)->sum('tbl_barangmasuk.bm_jumlah');
-        // $jmlkeluar = BarangkeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->where('tbl_barangkeluar.barang_kode', '=', $request->barang_kode)->sum('tbl_barangkeluar.bk_jumlah');
-        
-        // if ($request->tglawal == '') {
-        //     $jmlmasuk = BarangmasukModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangmasuk.barang_kode')->where('tbl_barangmasuk.barang_kode', '=', $row->barang_kode)->sum('tbl_barangmasuk.bm_jumlah');
-        // } else {
-        //     $jmlmasuk = BarangmasukModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangmasuk.barang_kode')->whereBetween('bm_tanggal', [$request->tglawal, $request->tglakhir])->where('tbl_barangmasuk.barang_kode', '=', $row->barang_kode)->sum('tbl_barangmasuk.bm_jumlah');
-        // }
-
-
-        // if ($request->tglawal) {
-        //     $jmlkeluar = BarangkeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->whereBetween('bk_tanggal', [$request->tglawal, $request->tglakhir])->where('tbl_barangkeluar.barang_kode', '=', $row->barang_kode)->sum('tbl_barangkeluar.bk_jumlah');
-        // } else {
-        //     $jmlkeluar = BarangkeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->where('tbl_barangkeluar.barang_kode', '=', $row->barang_kode)->sum('tbl_barangkeluar.bk_jumlah');
-        // }
-
-        // $jml = $request->jumlah;
-        // $totalstok = $request->barang_stok + ($jmlmasuk-$jmlkeluar);
-        // if ($totalstok < $jml) {
-        //   alert ('whopss stok kurang');   
-        // }else{
-
         PesananModel::create([
             'ps_gambar' => $img,
             'ps_kode' => $request->reqkode,
-            'barang_kode' => $request->kdbarang,
             'ps_barang' => $request->barang,
             'ps_tanggal' => $request->tglrequest,
             'ps_nama' => $request->nama,
@@ -185,7 +157,6 @@ class PesananController extends Controller
             $pesanan->update([
                 'ps_gambar' => $image->hashName(),
                 'ps_kode' => $request->reqkode,
-                'barang_kode' => $request->kdbarang,
                 'ps_barang'=>$request->barang,
                 'ps_tanggal' => $request->tglrequest,
                 'ps_nama' => $request->nama,
@@ -196,7 +167,6 @@ class PesananController extends Controller
             //update tanpa img
             $pesanan->update([
                 'ps_kode' => $request->reqkode,
-                'barang_kode' => $request->kdbarang,
                 'ps_barang'=>$request->barang,
                 'ps_tanggal' => $request->tglrequest,
                 'ps_nama' => $request->nama,

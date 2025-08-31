@@ -6,7 +6,7 @@
                 <h6 class="modal-title">Pilih Barang</h6><button onclick="resetB('tambah')" aria-label="Close" class="btn-close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body p-4 pb-5">
-                <input type="hidden" value="tambah" name="param[]">
+                <input type="hidden" value="tambah" name="param">
                 <input type="hidden" id="randkey">
                 <div class="table-responsive">
                     <table id="table-2" width="100%" class="table table-bordered text-nowrap border-bottom dataTable no-footer dtr-inline collapsed">
@@ -32,13 +32,8 @@
 
 @section('formOtherJS')
 <script>
-    // document.getElementById('randkey').value = makeid(10);
-    // if (randKeyElement) {
-    //         randKeyElement.value = makeid(10);
-    //     }
-
     function resetB() {
-        param = $('input[name="param[]"]').val();
+        param = $('input[name="param"]').val();
         if (param == 'tambah') {
             $('#modalBarang').modal('hide');
             $('#modaldemo8').removeClass('d-none');
@@ -97,7 +92,7 @@
             "ajax": {
                 "url": "{{url('admin/barang/listbarang')}}/param",
                 "data": function(d) {
-                    d.param = $('input[name="param[]"]').val();
+                    d.param = $('input[name="param"]').val();
                 }
             },
 

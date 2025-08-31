@@ -41,7 +41,7 @@
                             </label>
                             <div class="input-group">
                                 <input type="text" class="form-control" autocomplete="off" name="kdbarangU" placeholder="">
-                                <button class="btn btn-primary-light" onclick="searchBarangU()" type="button"><i class="fe fe-search"></i></button>
+                                <!-- <button class="btn btn-primary-light" onclick="searchBarangU()" type="button"><i class="fe fe-search"></i></button> -->
                                 <button class="btn btn-success-light" onclick="modalBarangU()" type="button"><i class="fe fe-box"></i></button>
                             </div>
                         </div>

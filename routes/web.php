@@ -165,7 +165,6 @@ Route::group(['middleware' => 'userlogin'], function() {
         Route::post('/admin/order/proses_tambah', [PesananController::class, 'proses_tambah' ])->name('order.store');
         Route::post('/admin/order/proses_hapus/{pesanan}', [PesananController::class, 'proses_hapus']);
         Route::post('/ad/proses_ubah/{pesanan}',[PesananController::class, 'proses_ubah']);
-        // Route::get('/admin/request/mail', [PesananController::class, 'verifikasi']);
         Route::get('/admin/barang/getbarang/{id}', [BarangController::class, 'getbarang']);
         Route::get('/admin/barang/listbarang/{param}', [BarangController::class, 'listbarang']);
     });

@@ -32,11 +32,9 @@
                                 <th class="border-bottom-0">Gambar</th>
                                 <th class="border-bottom-0">Tanggal Request </th>
                                 <th class="border-bottom-0">Kode Request</th>
-                                <!-- <th class="border-bottom-0">Kode Barang</th>
-                                <th class="border-bottom-0">Barang Stok</th> -->
-                                <th class="border-bottom-0">Barang Baru</th>
-                                <th class="border-bottom-0">Nama</th>
-                                <th class="border-bottom-0">Divisi</th>
+                                <th class="border-bottom-0">Nama Barang</th>
+                                <th class="border-bottom-0">User</th>
+                                <th class="border-bottom-0">Dept</th>
                                 <th class="border-bottom-0">Jumlah</th>
                                 <th class="border-bottom-0" width="1%">Action</th>
                             </thead>
@@ -64,8 +62,8 @@
         function update(data) {
             $("input[name='idrequestU']").val(data.ps_id);
             $("input[name='reqkodeU']").val(data.ps_kode);
-            $("input[name='kdbarangU']").val(data.barang_kode);
-            // $("input[name='tglrequestU']").val(data.ps_tanggal);
+            // $("input[name='kdbarangU']").val(data.barang_kode);
+            $("input[name='tglrequestU']").val(data.ps_tanggal);
             $("input[name='namaU']").val(data.ps_nama.replace(/_/g, ' '));
             $("input[name='divisiU']").val(data.ps_divisi);
             $("input[name='barangU']").val(data.ps_barang.replace(/_/g, ' '));
@@ -151,14 +149,6 @@
                             data: 'ps_kode',
                             name: 'ps_kode',
                         },
-                        // {
-                        //     data: 'barang_kode',
-                        //     name: 'barang_kode',
-                        // },
-                        // {
-                        //     data: 'kdbarang',
-                        //     name: 'barang_nama',
-                        // },
                         {
                             data: 'barang',
                             name: 'ps_barang',
