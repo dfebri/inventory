@@ -145,10 +145,7 @@ class BarangKeluarController extends Controller
         $today = Carbon::now();
         $data = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->where('tbl_barangkeluar.updated_at', '>=', $today)
         ->orderBy('tbl_barangkeluar.updated_at', 'DESC')->get();
-        Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data));
-        Mail::to('febri.murcahyo@sccbakery.com')->send(new SendMail($data));
-
-
+        Mail::to('meireza.hrga@gmail.com')->send(new SendMail($data));
     }
         
     public function proses_ubah(Request $request, BarangKeluarModel $barangkeluar)
