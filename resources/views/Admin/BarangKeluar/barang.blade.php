@@ -48,7 +48,6 @@
         var lastInput = inputFields[inputFields.length - 1];
         lastInput.value = data.barang_kode;
 
-       
         // console.log( $("input[name='kdbarang[0]']").val(`${data.barang_kode}`));
         $("#barangstok").val(data.totalstok);
         $("#nmbarang").val(data.barang_nama.replace(/_/g, ' '));

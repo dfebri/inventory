@@ -62,8 +62,6 @@
         function update(data) {
             $("input[name='idrequestU']").val(data.ps_id);
             $("input[name='reqkodeU']").val(data.ps_kode);
-            // $("input[name='kdbarangU']").val(data.barang_kode);
-            $("input[name='tglrequestU']").val(data.ps_tanggal);
             $("input[name='namaU']").val(data.ps_nama.replace(/_/g, ' '));
             $("input[name='divisiU']").val(data.ps_divisi);
             $("input[name='barangU']").val(data.ps_barang.replace(/_/g, ' '));
@@ -71,8 +69,6 @@
             if(data.ps_gambar != 'image.png'){
                 $("#outputImgU").attr("src", "{{asset('storage/barang/')}}"+"/"+data.ps_gambar);    
             }
-
-            getbarangbyidU(data.barang_kode);
 
             $("input[name='tglrequestU").bootstrapdatepicker({
                 format: 'yyyy-mm-dd',

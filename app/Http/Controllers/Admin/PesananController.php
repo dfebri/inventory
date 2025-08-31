@@ -42,7 +42,7 @@ class PesananController extends Controller
     public function show(Request $request)
     {
         if($request->ajax()) {
-            $data = PesananModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_pesanan.barang_kode')->orderBy('ps_id', 'DESC')->get();
+            $data = PesananModel::orderBy('ps_id', 'DESC')->get();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('img', function ($row) {

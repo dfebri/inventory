@@ -35,37 +35,6 @@
                         </div>          
                     </div>   
                     <div class="col-md-6">
-                        <!-- <div class="form-group">
-                            <label>Kode Barang <span class= "text-danger me-1">*</span>
-                                <input type="hidden" id="statusU" value="true">
-                                {{-- <div class="spinner-border spinner-border-sm d-none" id="loaderkdU" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div> --}}
-                            </label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" autocomplete="off" name="kdbarangU" placeholder="">
-                                <button class="btn btn-primary-light" onclick="searchBarangU()" type="button"><i class="fe fe-search"></i></button> 
-                                <button class="btn btn-success-light" onclick="modalBarangU()" type="button"><i class="fe fe-box"></i></button>
-                            </div>
-                        </div> -->
-                        <!-- <div class="form-group">
-                            <label>Barang Stok</label>
-                            <input type="text" class="form-control" id="nmbarangU">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Satuan</label>
-                                    <input type="text" class="form-control" id="satuanU" readonly>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Jenis</label>
-                                    <input type="text" class="form-control" id="jenisU" readonly>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="form-group">
                             <label for="title" class="form-label">Gambar</label>
                                 <center>
@@ -126,7 +95,7 @@
             const foto = $('#GetFileU')[0].files;
             var fd = new FormData();
 
-            // //Append data
+            //Append data
             fd.append('foto', foto[0]);
             fd.append('reqkode', reqkode);
             fd.append('tglrequest', tglrequest);
@@ -154,6 +123,7 @@
         }
 
         function resetValidU() {
+            $("input[name='reqkodeU']").removeClass('is-invalid');
             $("input[name='tglrequestU']").removeClass('is-invalid');
             $("input[name='namaU']").removeClass('is-invalid');
             $("input[name='divisiU']").removeClass('is-invalid');

@@ -91,7 +91,7 @@
                             <input type="text" name="jumlah" value="0" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" placeholder="">
                         </div>   -->
                         <div class="form-group">
-                            <label for="title" class="form-label">Gambar Barang Baru</label>
+                            <label for="title" class="form-label">Gambar</label>
                                 <center>
                                 <img src="{{url('/assets/default/barang/image.png')}}" width="80%" alt="profile-user" id="outputImg" class="">
                                 </center>
@@ -114,6 +114,23 @@
 
 @section('formTambahJS')
 <script>
+
+
+    // function modalBarang() {
+    //     $('#modalBarang').modal('show');
+    //     $('#modaldemo8').addClass('d-none');
+    //     $('input[name="param"]').val('tambah');
+    //     resetValid();
+    //     table2.ajax.reload();
+    // }
+
+     $('input[name="kdbarang"]').keypress(function(event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            getbarangbyid($('input[name="kdbarang"]').val());
+        }
+    });
+
     function modalBarang() {
         $('#modalBarang').modal('show');
         $('#modaldemo8').addClass('d-none');
@@ -121,12 +138,50 @@
         resetValid();
         table2.ajax.reload();
     }
-            
+
+    function searchBarang() {
+        getbarangbyid($('input[name="kdbarang"]').val());
+        resetValid();
+    }
+    function getbarangbyid(id) {
+        $("#loaderkd").removeClass('d-none');
+        $.ajax({
+            type: 'GET',
+            url: "{{ url('admin/barang/getbarang') }}/" + id,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function(data) {
+                if (data.length > 0) {
+                    $("#loaderkd").addClass('d-none');
+                    $("#status").val("true");
+                    $("#nmbarang").val(data[0].barang_nama);
+                    $("#satuan").val(data[0].satuan_nama);
+                    $("#jenis").val(data[0].jenisbarang_nama);
+                } else {
+                    $("#loaderkd").addClass('d-none');
+                    $("#status").val("false");
+                    $("#nmbarang").val('');
+                    $("#satuan").val('');
+                    $("#jenis").val('');
+                }
+            }
+        });
+    }
+       
+
     function checkForm(){
+        const reqkode = $("input[name = 'reqkode']").val();
         const tglrequest = $("input[name= 'tglrequest']").val();
         const divisi = $("input[name= 'divisi']").val();
         const jumlah = $("input[name= 'jumlah']").val();
-        if(tglrequest == ""){
+
+        if(reqkode == ""){
+            validasi('Kode Request wajib di isi!', 'warning');
+            $("input[name='reqkode']").addClass('is-invalid');
+            setLoading(false);
+            return(false);     
+        }else if(tglrequest == ""){
             validasi('Tanggal Request wajib di isi!', 'warning');
             $("input[name='tglrequest']").addClass('is-invalid');
             setLoading(false);
@@ -146,7 +201,7 @@
         }
     }
     function submitForm(){
-        // console.log('submitForm');
+        console.log('submitForm');
         const reqkode = $("input[name='reqkode']").val();
         const tglrequest = $("input[name='tglrequest']").val();
         const nama = $("input[name='nama']").val();

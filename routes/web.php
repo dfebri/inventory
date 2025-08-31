@@ -164,9 +164,9 @@ Route::group(['middleware' => 'userlogin'], function() {
         Route::get('/admin/order/show', [PesananController::class, 'show'])->name('order.getrequest');
         Route::post('/admin/order/proses_tambah', [PesananController::class, 'proses_tambah' ])->name('order.store');
         Route::post('/admin/order/proses_hapus/{pesanan}', [PesananController::class, 'proses_hapus']);
-        Route::post('/ad/proses_ubah/{pesanan}',[PesananController::class, 'proses_ubah']);
-        Route::get('/admin/barang/getbarang/{id}', [BarangController::class, 'getbarang']);
-        Route::get('/admin/barang/listbarang/{param}', [BarangController::class, 'listbarang']);
+        Route::post('/admin/order/proses_ubah/{pesanan}',[PesananController::class, 'proses_ubah']);
+        Route::get('/admin/order/getbarang/{id}', [BarangController::class, 'getbarang']);
+        Route::get('/admin/order/listbarang/{param}', [BarangController::class, 'listbarang']);
     });
 
     Route::middleware(['checkRoleUser:/materai, menu'])->group(function() {
