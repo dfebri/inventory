@@ -100,22 +100,25 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title">Grafik Pengeluaran Barang</h3>
-          <canvas id="myChart" width="400" height="180"></canvas>
-        </div>
+  <!-- Chart 1 -->
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h3 class="card-title">Grafik Pengeluaran Barang</h3>
+        <canvas id="myChart" style="width:100%; height:180px;"></canvas>
       </div>
     </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title">Grafik Request User</h3>
-          <canvas id="barChart" width="400" height="170"></canvas>
-        </div>
+  </div>
+
+  <!-- Chart 2 -->
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h3 class="card-title">Grafik Request User</h3>
+        <canvas id="barChart" style="width:100%; height:180px;"></canvas>
       </div>
     </div>
+  </div>
 </div>
 
 
