@@ -112,7 +112,7 @@
       <div class="card">
         <div class="card-body">
           <h3 class="card-title">Grafik Request User</h3>
-          <canvas id="barChart" width="400" height="180"></canvas>
+          <canvas id="barChart" width="400" height="170"></canvas>
         </div>
       </div>
     </div>
