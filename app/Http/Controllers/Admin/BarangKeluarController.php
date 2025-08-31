@@ -127,14 +127,14 @@ class BarangKeluarController extends Controller
     }
     public function proses_tambah(Request $request)
     {
-        // dd($request);
+        // dump($request);
         for($i=0; $i<count($request->barang); $i++){
             BarangKeluarModel::create([
                 'bk_kode' => $request->bkkode,
                 'bk_tanggal'=> $request->tglkeluar,  
                 'barang_stok' => $request->barangstok,
                 'bk_tujuan'=> $request->tujuan,
-                // 'bk_user'=> $request->user,
+                'bk_user'=> $request->user,
                 'barang_kode' => $request->barang[$i],
                 'bk_jumlah' => $request->jml[$i],
             ]);
@@ -142,10 +142,10 @@ class BarangKeluarController extends Controller
         // $data1 = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->orderBy('bk_id', 'DESC')->get();			     
         // Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data1));
         
-        $today = Carbon::now();
-        $data = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->where('tbl_barangkeluar.updated_at', '>=', $today)
-        ->orderBy('tbl_barangkeluar.updated_at', 'DESC')->get();
-        Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data));
+        // $today = Carbon::now();
+        // $data = BarangKeluarModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangkeluar.barang_kode')->where('tbl_barangkeluar.updated_at', '>=', $today)
+        // ->orderBy('tbl_barangkeluar.updated_at', 'DESC')->get();
+        // Mail::to('dwifebrimurcahyo@gmail.com')->send(new SendMail($data));
         // dd($data);
 
     }

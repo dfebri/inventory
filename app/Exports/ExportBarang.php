@@ -22,7 +22,7 @@ class ExportBarang implements FromView {
         $data["tglawal"] = request()->tglawal;
         $data["tglakhir"] = request()->tglakhir;
 
-        return view('Admin.Laporan.StokBarang.Excel', $data);
+        return view('Admin.Laporan.StokBarang.excel', $data);
                         
     }
 }

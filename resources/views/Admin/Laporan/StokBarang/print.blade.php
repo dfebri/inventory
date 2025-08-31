@@ -96,11 +96,12 @@ use Carbon\Carbon;
                 <th align="center" width="1%">NO</th>
                 <th>KODE BARANG</th>
                 <th>BARANG</th>
-                <th>HARGA BARANG</th>
                 <th>STOK AWAL</th>
                 <th>JML MASUK</th>
                 <th>JML KELUAR</th>
                 <th>TOTAL</th>
+                <th>SATUAN</th>
+                <th>HARGA</th>
             </tr>
         </thead>
         <tbody>
@@ -125,11 +126,12 @@ use Carbon\Carbon;
                 <td align="center">{{$no++}}</td>
                 <td>{{$d->barang_kode}}</td>
                 <td>{{$d->barang_nama}}</td>
-                <td align="center">{{$d->barang_harga}}</td>
                 <td align="center">{{$d->barang_stok}}</td>
                 <td align="center">{{$jmlmasuk}}</td>
                 <td align="center">{{$jmlkeluar}}</td>
                 <td align="center">{{$totalStok}}</td>
+                <td align="center">{{$d->satuan_nama}}</td>
+                <td align="center">{{$d->barang_harga}}</td>
             </tr>
             @endforeach
         </tbody>

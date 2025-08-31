@@ -49,11 +49,12 @@
                             <th class="border-bottom-0" width="1%">No</th>
                             <th class="border-bottom-0">Kode Barang</th>
                             <th class="border-bottom-0">Barang</th>
-                            <th class="border-bottom-0">Stok Awal</th>
-                            <th class="border-bottom-0">Harga</th>
-                            <th class="border-bottom-0">Jumlah Masuk</th>
-                            <th class="border-bottom-0">Jumlah Keluar</th>
+                            <th class="border-bottom-0">Stok Awal</th> 
+                            <th class="border-bottom-0">Jml Masuk</th>
+                            <th class="border-bottom-0">Jml Keluar</th>
                             <th class="border-bottom-0">Total Stok</th>
+                            <th clss="border-bottom-0">Satuan</th>
+                            <th class="border-bottom-0">Harga</th>
                         </thead>
                         <tbody></tbody>
                     </table>
@@ -122,10 +123,6 @@
                     name: 'barang_stok',
                 },
                 {
-                    data: 'currency',
-                    name: 'barang_harga',
-                },
-                {
                     data: 'jmlmasuk',
                     name: 'barang_kode',
                     orderable: false,
@@ -141,6 +138,16 @@
                     name: 'barang_kode',
                     searchable: false,
                     orderable: false,
+                },
+                {
+                    data: 'satuan',
+                    name: 'satuan_nama',
+                    searchable: false,
+                    orderable: false,
+                },
+                {
+                    data: 'currency',
+                    name: 'barang_harga',
                 },
             ],
 

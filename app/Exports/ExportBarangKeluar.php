@@ -27,7 +27,7 @@ class ExportBarangKeluar implements FromView {
         $data["tglawal"] = request()->tglawal;
         $data["tglakhir"] = request()->tglakhir;
 
-        return view('Admin.Laporan.BarangKeluar.Excel', $data);
+        return view('Admin.Laporan.BarangKeluar.excel', $data);
                         
     }
 }

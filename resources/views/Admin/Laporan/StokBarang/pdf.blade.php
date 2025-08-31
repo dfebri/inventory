@@ -84,6 +84,8 @@ use Carbon\Carbon;
                 <th>JML MASUK</th>
                 <th>JML KELUAR</th>
                 <th>TOTAL</th>
+                <th>SATUAN</th>
+                <th>HARGA</th>
             </tr>
         </thead>
         <tbody>
@@ -112,6 +114,8 @@ use Carbon\Carbon;
                 <td align="center">{{$jmlmasuk}}</td>
                 <td align="center">{{$jmlkeluar}}</td>
                 <td align="center">{{$totalStok}}</td>
+                <td align="center">{{$d->satuan_nama}}</td>
+                <td align="center">{{$d->barang_harga}}</td>
             </tr>
             @endforeach
         </tbody>

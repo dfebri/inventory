@@ -93,13 +93,12 @@ use Carbon\Carbon;
         <thead>
             <tr>
                 <th align="center" width="1%">NO</th>
-                <th>TGL KELUAR</th>
                 <th>KODE BRG KELUAR</th>
-                <th>KODE BARANG</th>
+                <th>TGL KELUAR</th>
                 <th>BARANG</th>
                 <th>HARGA BARANG</th>
                 <th>JML KELUAR</th>
-                <th>TUJUAN</th>
+                <th>DEPT</th>
             </tr>
         </thead>
         <tbody>
@@ -107,13 +106,12 @@ use Carbon\Carbon;
             @foreach($data as $d)
             <tr>
                 <td align="center">{{$no++}}</td>
-                <td>{{Carbon::parse($d->bk_tanggal)->translatedFormat('d F Y')}}</td>
                 <td>{{$d->bk_kode}}</td>
-                <td>{{$d->barang_kode}}</td>
+                <td align="center">{{Carbon::parse($d->bk_tanggal)->translatedFormat('d F Y')}}</td>
                 <td>{{$d->barang_nama}}</td>
                 <td align="center">{{'Rp '. number_format($d->barang_harga)}}</td>
                 <td align="center">{{$d->bk_jumlah}}</td>
-                <td>{{$d->bk_tujuan}}</td>
+                <td align="center">{{$d->bk_tujuan}}</td>
             </tr>
             @endforeach
         </tbody>

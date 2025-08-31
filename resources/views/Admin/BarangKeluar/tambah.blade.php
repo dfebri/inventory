@@ -23,15 +23,15 @@
                             <!--<input type="text" name="tujuan" class="form-control" placeholder="">-->
                             <select name="tujuan" class="form-control">
                                 <option value="">--- Piilh Dept. ---</option>
-                                    <option>HRGA</option>
-                                    <option>Operation</option>
-                                    <!-- <option>Commercial</option> -->
-                                    <!-- <option>SCM</option> -->
                                     <option>Finance</option>
-                                    <option>Tax</option>
+                                    <option>HRGA</option>
+                                    <option>Legal</option>
+                                    <option>Operation</option>
+                                    <option>PA</option>
                                     <option>Sales</option>
-                                    <!-- <option>KPG</option>
-                                    <option>BPIC</option> -->
+                                    <option>Tamu</option>
+                                    <option>Tax</option>
+
                             </select>
                         </div>
                         <div class="form-group">
@@ -57,14 +57,6 @@
                             </div>
                             <input type="hidden" class="form-control" id="barangstok" readonly>
                         </div>
-                        {{-- <div class="form-group"> --}}
-                            {{-- <label>Stok Barang</label> --}}
-                      
-                        {{-- </div> --}}
-                        {{-- <div class="form-group">
-                            <label>Nama Barang</label>
-                            <input type="text" class="form-control" id="nmbarang0" data-index="0" readonly>
-                        </div> --}}
                         <div class="form-group">
                             <label for="jml" class="form-label">Jumlah Request <span class="text-danger">*</span></label>
                             <input type="text" name="jml[]" value="0" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/i, '').replace(/(\..*?)\..*/i, '$1').replace(/^0[^.]/, '0');" placeholder="">
@@ -210,8 +202,6 @@
         // var_dump(barangstok)
         setLoading(true);
         resetValid();
-        // var_dump(jml),
-        // sumbrg = sum("barangstok");
         console.log(barangstok);
         console.log(jml);
         if (tglkeluar == "") {
@@ -219,11 +209,6 @@
             $("input[name='tglkeluar']").addClass('is-invalid');
             setLoading(false);
             return false;
-        // } else if (status == "false") {
-        //     validasi('Barang wajib di pilih!', 'warning');
-        //     $("input[name='kdbarang[]']").addClass('is-invalid');
-        //     setLoading(false);
-        //     return false;
         } else if (jml == "" || jml == "0") {
             validasi('Jumlah Keluar wajib di isi!', 'warning');
             $("input[name='jml[]']").addClass('is-invalid');

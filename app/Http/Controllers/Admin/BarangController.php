@@ -82,8 +82,7 @@ class BarangController extends Controller
                     $currency = $row->barang_harga == '' ? '-' : 'Rp ' . number_format($row->barang_harga, 0);
                 
                     return $currency;
-                })
-          
+                })      
                 // ->addColumn('currency', function ($row) use ($request){
                 //     // $jmlhargaupdate = BarangMasukModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangmasuk.barang_kode')->where('tbl_barangmasuk.barang_kode', '=', $row->barang_kode)->sum('tbl_barangmasuk.bm_harga');
                 //     $jmlhargaupdate = BarangMasukModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangmasuk.barang_kode')->where('tbl_barangmasuk.barang_kode', '=', $row->barang_kode)->sum('tbl_barangmasuk.bm_harga');

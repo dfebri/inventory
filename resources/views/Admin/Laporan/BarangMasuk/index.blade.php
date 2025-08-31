@@ -48,12 +48,12 @@
                     <table id="table-1" class="table table-bordered text-nowrap border-bottom dataTable no-footer dtr-inline collapsed">
                         <thead>
                             <th class="border-bottom-0" width="1%">No</th>
-                            <th class="border-bottom-0">Tanggal Masuk</th>
                             <th class="border-bottom-0">Kode Barang Masuk</th>
-                            <th class="border-bottom-0">Kode Barang</th>
+                            <th class="border-bottom-0">Tanggal Masuk</th>
+                            <!-- <th class="border-bottom-0">Kode Barang</th> -->
                             <th class="border-bottom-0">Barang</th>
                             <th class="border-bottom-0">Harga Update</th>
-                            <th class="border-bottom-0">Jumlah Masuk</th>
+                            <th class="border-bottom-0">Jumlah</th>
                         </thead>
                         <tbody></tbody>
                     </table>
@@ -115,16 +115,12 @@
                     searchable: false
                 },
                 {
-                    data: 'tgl',
-                    name: 'bm_tanggal',
-                },
-                {
                     data: 'bm_kode',
                     name: 'bm_kode',
                 },
                 {
-                    data: 'barang_kode',
-                    name: 'barang_kode',
+                    data: 'tgl',
+                    name: 'bm_tanggal',
                 },
                 {
                     data: 'barang',

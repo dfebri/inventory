@@ -73,7 +73,10 @@ class LapStokBarangController extends Controller
                     $currency = $row->barang_harga == ''? '-' : 'Rp ' . number_format($row->barang_harga, 0);
                     return $currency;
                 }) 
-
+                ->addColumn('satuan', function($row) use ($request) {
+                    $satuan = $row->satuan_id == '' ? '-' : $row->satuan_nama;
+                    return $satuan;
+                })
                 ->addColumn('jmlmasuk', function ($row) use ($request) {
                     if ($request->tglawal == '') {
                         $jmlmasuk = BarangMasukModel::leftJoin('tbl_barang', 'tbl_barang.barang_kode', '=', 'tbl_barangmasuk.barang_kode')->where('tbl_barangmasuk.barang_kode', '=', $row->barang_kode)->sum('tbl_barangmasuk.bm_jumlah');
@@ -122,7 +125,7 @@ class LapStokBarangController extends Controller
 
                     return $result;
                 })
-                ->rawColumns(['stokawal', 'jmlmasuk', 'jmlkeluar', 'totalstok', 'currency'])->make(true);
+                ->rawColumns(['stokawal', 'jmlmasuk', 'jmlkeluar', 'totalstok', 'currency', 'satuan'])->make(true);
         }
     }
 }
